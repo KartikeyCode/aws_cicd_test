@@ -16,7 +16,7 @@ jobs:
     - name: Pull Docker Image
       run: sudo docker pull wcbongz/aws_cicd_test:latest
     - name: Disable AppArmor
-      run: sudo systemctl disable apparmor.service --now
+      run: sudo aa-remove-unknown
     - name: Delete Old Container
       run: sudo docker rm -f aws_cicd_test || true
     - name: Run Container
