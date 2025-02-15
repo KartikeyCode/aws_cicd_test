@@ -23,7 +23,7 @@ jobs:
 
 
     - name: Build the Docker image
-      run: docker build -t kartikeycode/aws_cicd_test .
+      run: docker build -t aws_cicd_test .
 
     - name: Push to Docker Hub
       run: docker push wcbongz/aws_cicd_test:latest
