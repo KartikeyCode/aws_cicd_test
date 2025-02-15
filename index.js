@@ -10,7 +10,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/test', (req, res) => {
-    res.send('Test Successful');
+    res.json({
+        status:200,
+        message:'Test Successful'
+    }
+    );
 });
 
 app.get('/hello/:name', (req, res) => {
