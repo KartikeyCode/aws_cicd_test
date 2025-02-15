@@ -1,0 +1,21 @@
+name: CD Pipeline 
+
+on: 
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types:
+      - completed
+
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - name: Pull Docker Image
+      run: sudo docker pull wcbongz/aws_cicd_test:latest
+    - name: Delete Old Container
+      run: docker rm -f aws_cicd_test-container || true
+    - name: Run Container
+      run : docker run -d -p 8000:8000 --name wcbongz/aws_cicd_test
