@@ -16,6 +16,6 @@ jobs:
     - name: Pull Docker Image
       run: sudo docker pull wcbongz/aws_cicd_test:latest
     - name: Delete Old Container
-      run: docker rm -f aws_cicd_test || true
+      run: sudo docker rm -f aws_cicd_test || true
     - name: Run Container
       run : docker run -d -p 8000:8000 --name aws_cicd_test wcbongz/aws_cicd_test
