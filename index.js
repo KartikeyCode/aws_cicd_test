@@ -15,7 +15,7 @@ app.get('/test', (req, res) => {
 
 app.get('/hello/:name', (req, res) => {
     const name = req.params.name;
-    res.send(`Hello, ${name} Nice to meet you `);
+    res.send(`Hello, ${name} Nice to meet you!`);
 });
 
 app.listen(port, () => {
