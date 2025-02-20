@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.json({
         status: 200,
-        message: "Server Running Successfully"
+        message: "Server Running Successfully!"
     });
 });
 
